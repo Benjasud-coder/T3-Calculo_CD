@@ -1,0 +1,38 @@
+=== PAGE 1 ===
+IMT2220 – C´ alculo para Ciencia de Datos
+Tarea 3: An´ alisis espectral de audio
+Profesor: Ignacio Labarca
+Entrega: Mi´ ercoles 8 de julio de 2026, 23:59
+La Transformada de Fourier permite descomponer una se˜ nal en sus componentes de frecuencia. En esta tarea
+aplicar´ a la FFT a un archivo de audio real, analizar´ a su espectro y dise˜ nar´ a filtros que modifiquen el sonido
+actuando directamente sobre los coeficientes de Fourier.
+Se provee el archivo audio.wav. Trabaje en un notebook de Jupyter ( .ipynb), usando NumPy y Matplotlib.
+Parte 1: Se˜ nal y espectro
+1) Cargue el archivo de audio. Si es est´ ereo, qu´ edese con el canal izquierdo. Normalice la se˜ nal al rango [−1, 1]
+usando el rango m´ aximo del tipo de dato. Grafique la amplitud en funci´ on del tiempo.
+2) Calcule la FFT con numpy.fft.rfft y grafique el espectro de magnitud en funci´ on de la frecuencia.
+Identifique y etiquete en el gr´ afico las 5 frecuencias m´ as dominantes.
+Parte 2: Filtros
+En cada ´ ıtem, parta de una copia limpia de los coeficientes originales. Aplique el filtro poniendo en cero los
+coeficientes correspondientes, reconstruya con numpy.fft.irfft y guarde el audio resultante.
+3) Filtro pasa-bajos. Ponga en cero los coeficientes con frecuencia > fc. Elija fc a partir del espectro.
+Grafique el espectro antes y despu´ es. Guarde comoaudio pasa bajos.wav. Describa sus resultados.
+4) Filtro pasa-altos. Ponga en cero los coeficientes con frecuencia < fc, usando la misma fc. Grafique y
+guarde como audio pasa altos.wav. Describa sus resultados.
+5) Filtro elimina-banda. Ponga en cero los coeficientes en un rango [ flow, fhigh]. Elija los l ´ ımites a partir
+del espectro. Grafique y guarde como audio elimina banda.wav. Describa sus resultados.
+Parte 3: Espectrograma
+Un espectrograma es una representaci´ on de c´ omo var ´ ıa el espectro a lo largo del tiempo: el eje horizontal es
+el tiempo, el eje vertical es la frecuencia, y la intensidad del color indica la magnitud. A diferencia de la FFT
+global, muestra qu´ e frecuencias est´ an activas en cada momento.
+6) Divida la se˜ nal en intervalos contiguos de largoℓ >0. Calcule la FFT de cada intervalo y apile los vectores
+de magnitud en una matriz donde cada fila es un intervalo y cada columna una frecuencia. Visualice la
+matriz como un mapa de calor con el tiempo en el eje horizontal y la frecuencia en el eje vertical, usando
+escala logar ´ ıtmica para las magnitudes. Elijaℓ y el rango de frecuencias visible de modo que el resultado
+sea claro e informativo. Escriba una breve interpretaci´ on del gr´ afico. ¿Qu´ e ocurre siℓ es muy peque˜ no?
+¿Y muy grande?
+Entrega
+Entregue un notebook .ipynb con el c´ odigo ejecutado. El uso de IA debe declararse expl ´ ıcitamente. La tarea
+puede realizarse en parejas o de forma individual.
+1
+
